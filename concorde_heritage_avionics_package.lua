@@ -1,5 +1,4 @@
--- Concorde Heritage avionics package -- v3.00rc2 -- addon for Concorde FXP v3.12
---XP12 compatibility version, fixed FE fuel counter flag
+-- Concorde Heritage avionics package -- v2.00rc2 -- addon for Concorde FXP v2.01
 --DONE Heritage fuel system bypass for Colimata manual mode
 --DONE added TO4 limiter for N2 dial of ENG4
 --DONE added trim cheat for flight
@@ -357,11 +356,6 @@ end
 --end
 
 function read_the_drefs() --read datarefs
-ice_detected=getDataf(findDataref("sim/flightmodel/failures/pitot_ice")) -- here readonly for prevent other scripts conflict
-ice_detected_wing1=getDataf(findDataref("sim/flightmodel/failures/frm_ice")) -- here readonly for prevent other scripts conflict
-ice_detected_wing2=getDataf(findDataref("sim/flightmodel/failures/frm_ice2")) -- here readonly for prevent other scripts conflict
-icing_on_all_windows=getDataf(findDataref("sim/flightmodel/failures/window_ice")) -- here readonly for prevent other scripts conflict
-flag_aft_total_counters=getDatai(findDataref("Gastonreif/Heritage/flag_aft_total_counters")) -- 1 flag is off
 light_lo_1=getDatai(findDataref("Gastonreif/Heritage/light_lo_1"))
 light_lo_2=getDatai(findDataref("Gastonreif/Heritage/light_lo_2"))
 light_lo_3=getDatai(findDataref("Gastonreif/Heritage/light_lo_3"))
@@ -1566,7 +1560,6 @@ AOA_VALUE=getDataf(findDataref("sim/flightmodel2/misc/AoA_angle_degrees")) -- +/
 CON_AIDS_ROTARY=getDatai(findDataref("Colimata/CON_EG_RL_sw_acf_ids_rotary_i")) -- 0 SYS, 1 ACQ1, 2 ACQ2, 3 ADR, 4 LR 
 end
 --END dataref limits code
-dataref("VS_ACTUAL", "sim/cockpit2/gauges/indicators/vvi_fpm_pilot", "readonly") -- needed from v3 and XP12
 --dataref("TEST3", "Colimata/CON_TESTVALUE_3_f", "writable") -- disable this asap, for debug only
 --dataref("INS1_RIGHT_MINUTE", "Colimata/CON_CC_INS1_R_display_value_b", "readonly", 4) -- 0-90, minutes left should be 4
 dataref("THRO_PCT", "Colimata/CON_CC_THRO_position_pct_f", "writable") --must stay here otherwise blocked throttle
@@ -1589,6 +1582,7 @@ dataref("indicated_air_speed", "sim/flightmodel/position/indicated_airspeed", "r
 dataref("speed", "sim/cockpit2/gauges/indicators/true_airspeed_kts_pilot", "readonly")
 --dataref("Total_C", "Colimata/CON_CC_TEMP_total_deg_i", "writable") --not needed since v110
 --dataref("Total_C_plus", "Colimata/CON_CC_TEMP_total_plus_minus_i", "writable") --0 is +, 1 is minus
+dataref("VS_ACTUAL", "sim/flightmodel/position/vh_ind_fpm", "writable") 
 dataref("OVERRIDE_ROLL", "sim/operation/override/override_joystick_roll", "writable")
 --dataref("OVERRIDE_PITCH", "sim/operation/override/override_joystick_pitch", "writable")
 dataref("ROLL", "sim/joystick/yoke_roll_ratio", "writable") -- -1 +1
@@ -1669,7 +1663,10 @@ dataref("RIGHT_OUTER_ELEVON_LIGHT", "Colimata/CON_IP_lgt_ICOVOL_vi", "writable",
 dataref("RANDGEN", "sim/cockpit/radios/transponder_brightness", "readonly") 
 dataref("transponder_code", "sim/cockpit2/radios/actuators/transponder_code", "readonly") -- for AFR4590 scenario
 dataref("failure_code", "sim/cockpit2/radios/actuators/adf2_frequency_hz", "readonly") -- for AFR4590 scenario
+dataref("ice_detected", "sim/flightmodel/failures/pitot_ice", "readonly")
 dataref("ice_detected_intake", "sim/flightmodel/failures/inlet_ice", "readonly")
+dataref("ice_detected_wing1", "sim/flightmodel/failures/frm_ice", "readonly")
+dataref("ice_detected_wing2", "sim/flightmodel/failures/frm_ice2", "readonly")
 --dataref("TRIM_WARN", "Colimata/CON_RF_lgt_MASTER_TRIM_i", "writable")--trim warning light
 --dataref("CG_WARN", "Colimata/CON_RF_lgt_MASTER_CG_i", "writable")--CG warning light not used in v111
 --dataref("FUEL_WARN", "Colimata/CON_RF_lgt_MASTER_FUEL_i", "writable")--low fuel warning light
@@ -1752,7 +1749,7 @@ dataref("ENG2_PRI_NOZZLE", "Colimata/CON_A_ENG_nozzle_primary_pct_vf", "readonly
 dataref("ENG3_PRI_NOZZLE", "Colimata/CON_A_ENG_nozzle_primary_pct_vf", "readonly", 2)
 dataref("ENG4_PRI_NOZZLE", "Colimata/CON_A_ENG_nozzle_primary_pct_vf", "readonly", 3)
 --dataref("CLOCK_BRIGHTNESS", "Colimata/CON_IP_CLOCK_sw_brightness_f", "readonly") -- debug only
---dataref("icing_on_all_windows", "sim/flightmodel/failures/window_ice", "readonly") -- here readonly for prevent other scripts conflict
+dataref("icing_on_all_windows", "sim/flightmodel/failures/window_ice", "readonly") -- here readonly for prevent other scripts conflict
 dataref("light_strobe_white", "sim/flightmodel2/lights/strobe_brightness_ratio", "writable", 0) -- white
 dataref("light_strobe_red", "sim/flightmodel2/lights/strobe_brightness_ratio", "writable", 1) -- red strobe
 dataref("simulator_framerate_period", "sim/operation/misc/frame_rate_period", "readonly")
@@ -2905,7 +2902,7 @@ function default_positions()
 	setDatai(findDataref("Colimata/CON_EG_TANK_sw_inter_con_0508_i"),FUEL_TRANS_58) --0 is open, 1 is shut
     FUEL_TRANS_67=1
 	setDatai(findDataref("Colimata/CON_EG_TANK_sw_inter_con_0607_i"),FUEL_TRANS_67) --0 is open, 1 is shut
-	CON_CLOCK_ELAPSED_SWITCH=0 -- for default INS copatibility
+	CON_CLOCK_ELAPSED_SWITCH=2
 	setDatai(findDataref("Colimata/CON_IP_CLOCK_sw_run_stop_reset_i"),CON_CLOCK_ELAPSED_SWITCH) 
 	CON_ELAPSED_DISP_MIN = 100 -- default zeros
     setDatai(findDataref("Gastonreif/Heritage/clock_elapsed_minutes"),CON_ELAPSED_DISP_MIN)
@@ -3386,17 +3383,6 @@ function various_timers()
   	setDatai(findDataref("Gastonreif/Heritage/knob_consumed4"),knob_consumed4)
   end
  end 
- -- various FLAGS
- -- FE FUEL totals
- fuel_counters_low = FUEL_TANK_1_LOWLEVEL_LIGHT + FUEL_TANK_2_LOWLEVEL_LIGHT + FUEL_TANK_3_LOWLEVEL_LIGHT + FUEL_TANK_4_LOWLEVEL_LIGHT
- if battery_on == 0 or fuel_counters_low >= 2 then
-  flag_aft_total_counters = 0 -- 0 is ON
-  setDatai(findDataref("Gastonreif/Heritage/flag_aft_total_counters"), flag_aft_total_counters) -- 1 flag is off
- end
- if battery_on == 1 and fuel_counters_low <= 1 then
-  flag_aft_total_counters = 1 -- 0 is off
-  setDatai(findDataref("Gastonreif/Heritage/flag_aft_total_counters"), flag_aft_total_counters)
- end
  -- AFR4590 scenario 
  if transponder_code == 4590 then
   -- tire blown
@@ -13938,16 +13924,16 @@ end -- end light tests
 	ENG3_OIL_TEMP_C=(ENG3_OIL_TEMP-32)*(5/9)
 	ENG4_OIL_TEMP_C=(ENG4_OIL_TEMP-32)*(5/9)
    	-- definition of engine oil temperature 
-	eng1_oiltemp_adjusted = ENG1_OIL_TEMP_C*0.5
+	eng1_oiltemp_adjusted = ENG1_OIL_TEMP_C*2
 	if eng1_oiltemp_adjusted <= 1 then eng1_oiltemp_adjusted = 1 end --low limit
 	if eng1_oiltemp_adjusted >= 250 then eng1_oiltemp_adjusted = 250 end -- high limit
-	eng2_oiltemp_adjusted = ENG2_OIL_TEMP_C*0.5
+	eng2_oiltemp_adjusted = ENG2_OIL_TEMP_C*2
 	if eng2_oiltemp_adjusted <= 1 then eng2_oiltemp_adjusted = 1 end 
 	if eng2_oiltemp_adjusted >= 250 then eng2_oiltemp_adjusted = 250 end 
-	eng3_oiltemp_adjusted = ENG3_OIL_TEMP_C*0.5
+	eng3_oiltemp_adjusted = ENG3_OIL_TEMP_C*2
 	if eng3_oiltemp_adjusted <= 1 then eng3_oiltemp_adjusted = 1 end 
 	if eng3_oiltemp_adjusted >= 250 then eng3_oiltemp_adjusted = 250 end 
-	eng4_oiltemp_adjusted = ENG4_OIL_TEMP_C*0.5
+	eng4_oiltemp_adjusted = ENG4_OIL_TEMP_C*2
 	if eng4_oiltemp_adjusted <= 1 then eng4_oiltemp_adjusted = 1 end 
 	if eng4_oiltemp_adjusted >= 250 then eng4_oiltemp_adjusted = 250 end 
    	--eng1_oiltemp=eng1_oiltemp_adjusted+(ENG1_HEATSELF*0.1)+TAT 
