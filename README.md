@@ -14,34 +14,6 @@ Gaston Reif (@heritage.avionics.package) • Instagram photos and videos
 
 
 Features:
-NEW*Compatibility for X-Plane 12.08
-NEW*PREMIUM ONLY*Animated cabin service
-NEW*PREMIUM ONLY*Joystick mappings for VSI and Reheats
-NEW*PREMIUM ONLY*GPWS aural warnings
-NEW*PREMIUM ONLY*Possible to refill tanks 9,10 and 11 from main tanks 1,2,3 and 4.
-NEW*PREMIUM ONLY*Aircondition fail groups working
-NEW*PREMIUM ONLY*Ability to check GPU quality before power up
-NEW*PREMIUM ONLY*Flight director can hold pitch without autopilot active
-NEW*PREMIUM ONLY*Landing gear handle has now neutral position too
-NEW*PREMIUM ONLY*flight recorder interval improved
-NEW*PREMIUM ONLY*selectable 321 noise call via clock mode timer
-NEW*PREMIUM ONLY*automatic bank limits at supersonic speeds
-*PREMIUM ONLY*Improved CG computer
-*PREMIUM ONLY*Saving last state of switches and knobs
-*PREMIUM ONLY*Flight data recording facility
-*PREMIUM ONLY*Emergency landing gear deployment
-*PREMIUM ONLY*Rebuilt INS independent units with remote function and plan import
-*PREMIUM ONLY*New transponder unit with new TCAS
-*PREMIUM ONLY*ITEM computers operational for the first time in Concorde sim world
-*PREMIUM ONLY*Independent reheats and throttles in VR as well
-*PREMIUM ONLY*Anti-ice tests, intake tests and gear fail monitor
-*PREMIUM ONLY*Breakers panel with labels and some working breakers
-*PREMIUM ONLY*PA/FA panel for cabin lights and safety announcements
-*PREMIUM ONLY*Aeration modeled, use de-air pumps
-*PREMIUM ONLY*Standby and emergency visor and nose switches and handle working
-*PREMIUM ONLY*Enhanced fuel system
-*PREMIUM ONLY*Passangers in the cabin (requires CDB Library)
-*PREMIUM ONLY*various fixes over v300
 -Fully operational CG computer with all displays and knobs
 -Fuel consumed counters now operational
 -Engine control schedule now simulated and affect N2 and EGT instruments
