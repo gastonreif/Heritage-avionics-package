@@ -12,7 +12,6 @@ Follow on Instagram for previews, current work etc.
 
 Gaston Reif (@heritage.avionics.package) • Instagram photos and videos
 
-Video tutorial here:
 
 Features:
 NEW*Compatibility for X-Plane 12.08
