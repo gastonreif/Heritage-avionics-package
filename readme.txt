@@ -2,7 +2,7 @@
 
 Concorde Heritage avionics package
 
-*** works with no issues with latest V3.12 of Concorde FXP***
+*** works with no issues with latest V2.01A of Concorde FXP***
 
 Follow on Instagram for previews, current work etc.
 
@@ -11,50 +11,22 @@ Gaston Reif (@heritage.avionics.package) • Instagram photos and videos
 Video tutorial here:
 
 Features:
-NEW*Compatibility for X-Plane 12.08
-NEW*PREMIUM ONLY*Animated cabin service
-NEW*PREMIUM ONLY*Joystick mappings for VSI and Reheats
-NEW*PREMIUM ONLY*GPWS aural warnings
-NEW*PREMIUM ONLY*Possible to refill tanks 9,10 and 11 from main tanks 1,2,3 and 4.
-NEW*PREMIUM ONLY*Aircondition fail groups working
-NEW*PREMIUM ONLY*Ability to check GPU quality before power up
-NEW*PREMIUM ONLY*Flight director can hold pitch without autopilot active
-NEW*PREMIUM ONLY*Landing gear handle has now neutral position too
-NEW*PREMIUM ONLY*flight recorder interval improved
-NEW*PREMIUM ONLY*selectable 321 noise call via clock mode timer
-NEW*PREMIUM ONLY*automatic bank limits at supersonic speeds
-*PREMIUM ONLY*Improved CG computer
-*PREMIUM ONLY*Saving last state of switches and knobs
-*PREMIUM ONLY*Flight data recording facility
-*PREMIUM ONLY*Emergency landing gear deployment
-*PREMIUM ONLY*Rebuilt INS independent units with remote function and plan import
-*PREMIUM ONLY*New transponder unit with new TCAS
-*PREMIUM ONLY*ITEM computers operational for the first time in Concorde sim world
-*PREMIUM ONLY*Independent reheats and throttles in VR as well
-*PREMIUM ONLY*Anti-ice tests, intake tests and gear fail monitor
-*PREMIUM ONLY*Breakers panel with labels and some working breakers
-*PREMIUM ONLY*PA/FA panel for cabin lights and safety announcements
-*PREMIUM ONLY*Aeration modeled, use de-air pumps
-*PREMIUM ONLY*Standby and emergency visor and nose switches and handle working
-*PREMIUM ONLY*Enhanced fuel system
-*PREMIUM ONLY*Passangers in the cabin (requires CDB Library)
-*PREMIUM ONLY*various fixes over v300
--Fully operational CG computer with all displays and knobs
--Fuel consumed counters now operational
--Engine control schedule now simulated and affect N2 and EGT instruments
--Improved engine instruments behavior
--Plessey PVS1580 data acquisition computer, firstime ever simulated
--Visual windshield icing
--Improved cabin pressurization with oxygen system
--Three independent chronometers all with timer function
--Automatic fuel trim transfer with load limiters
--Takeoff CG 54% switch operational
--Improved Decision height alert
--ISA temperature gauge now simulated on FE panel too
--Altitude, temperature and speed indicators new in FE panel
--Improved exterior lightning and cabin ambient lightning
--Improved cabin temperature settings
--fully compatible with latest Colimata Concorde FXP 3.12
+*NEW* Fully operational CG computer with all displays and knobs
+*NEW* Fuel consumed counters now operational
+*NEW* Engine control schedule now simulated and affect N2 and EGT instruments
+*NEW* Improved engine instruments behavior
+*NEW* Plessey PVS1580 data acquisition computer, firstime ever simulated
+*NEW* Visual windshield icing
+*NEW* Improved cabin pressurization with oxygen system
+*NEW* Three independent chronometers all with timer function
+*NEW* Automatic fuel trim transfer with load limiters
+*NEW* Takeoff CG 54% switch operational
+*NEW* Improved Decision height alert
+*NEW* ISA temperature gauge now simulated on FE panel too
+*NEW* Altitude, temperature and speed indicators new in FE panel
+*NEW* Improved exterior lightning and cabin ambient lightning
+*NEW* Improved cabin temperature settings
+-fully compatible with latest Colimata Concorde FXP 2.01A
 -more warning lights for secondary engine instruments on engineer's panel
 -changed night cabin interior lightning
 -removed avitab integration, better use standalone for positioning
@@ -84,14 +56,9 @@ NEW*PREMIUM ONLY*automatic bank limits at supersonic speeds
 -some ATC Heritage sounds for Concorde
 -enhanced 8.33kHz radio on COM1 and COM2 and correct frequency range
 
-PREMIUM content information:
-This package has changed to freemium concept, which means if you want access to unique features you need new LUA core file.
-Use Paypal link above. After donation of 20 EUR you will become registered user and to your email address will be sent (usually within 24h)
-that new LUA file with some instructions and new Users Manual for extra features. If you are OK with basic features ignore this and enjoy
-the Heritage avionics package upgrade with X-Plane 12 compatibility.
 
 Description:
-This is community mod for Concorde FXP 3.12. It focuses into deeper system functions and adds missing features.
+This is community mod for Concorde FXP 2.01. It focuses into deeper system functions and add missing features.
 All gauges are now working at Engineer's panel. Every system is now modeled, some fire, icing and undercarriage tests are not.
 Cabin pressurization is now in manual mode, you have to set desired cabin altitude and cabin rate, system will pressurize the cabin.
 Oxygen system for cca 20 minutes is available from breathing masks in case of emergency from hypoxia or blackout.
@@ -158,17 +125,17 @@ Installation:
 You have two options, Automatic install or manual. Use manual only if you making update, are not using Windows OS or have troubles with automatic install
 
 A: Automatic install is in folder Installer. Run first main_setup.exe and read the screens carefully, select correct folder for installation
-   which is something like that: C:\X-plane 12\resources\plugins\FlywithLua\Scripts
+   which is something like that: C:\X-plane 11\resources\plugins\FlywithLua\Scripts
    Start menu shortcuts not needed, untick that.
    Run then upgrade_package.exe and again read carefully the screens and select correct folder
-   which should look like this: C:\X-Plane 12\Aircraft\Concorde_FXP
+   which should look like this: C:\X-Plane 11\Aircraft\Concorde_FXP
    Start menu shortcuts not needed, untick that. On last screen leave ticked "Launch Concorde Heritage avionics package", after patches are applied
    you can press any key to continue and installation is done. This will apply patches for outside lights and VR.
    You can uninstall it if you dont like it, there are backups created too, look for manual section how to do it.
    
 B: Manual install is for Mac/Linux users or anybody who wants copy the files manually eg. for upgrade only:
-1.Copy Concorde_heritage_avionics_package LUA script and CONCORDE folder to your X-plane 12/resources/plugins/FlywithLua/Scripts folder
-2.Unzip contents of the essentials.zip archive, it goes to main Concorde folder, like X-plane 12/Aircraft/CONCORDE_FXP/
+1.Copy Concorde_heritage_avionics_package LUA script and CONCORDE folder to your X-plane 11/resources/plugins/FlywithLua/Scripts folder
+2.Unzip contents of the essentials.zip archive, it goes to main Concorde folder, like X-plane 11/Aircraft/CONCORDE_FXP/
 - prompt overwrite, backup your ACF file first, if you have it customized, do it again later.
 
 3.(optional) For Dual 4 engine operations select inside the X-Plane Joystick settings profile for your 4 engines powered airplanes (747, Concorde)
@@ -187,7 +154,7 @@ Copy 2 files to the main folder Concorde_FXP and then run the CMD files:
 It will add to the VR some fixes. Done. 
 If you dont like it, copy also restore_the_VR.cmd and run it. It will restore the backup created before.
 
-Detailed manual and instructions how to operate see manual Heritage v3.PDF
+Detailed manual and instructions how to operate see Manual.PDF
 
 
 FAQ:
@@ -254,7 +221,7 @@ Q: It does not work, LUA stopped or quarantined
 A: contact me, you should not see this.
 
 Q: I got crash, log.txt says error in GPWS.
-A: Download from github Skiselkov OpenWXR, only the OpenGPWS is needed, replace the one found in ConcordeFXP/plugins/
+A: Download from github Skiselkov OpenWXR, only the OpenGPWS si needed, replace the on found in ConcordeFXP/plugins/
 
 Q: The sounds of ATC are too loud or quiet volume.
 A: you can change the volume before or during play by turning corresponding volume knobs.
@@ -264,7 +231,7 @@ A: you can change the volume before or during play by turning corresponding volu
    or switch MWS to off by switch on the FE panel, right side, below electrics.
 
 Q: Will it work for Concorde previous versions?
-A: No, you will get errors.
+A: No, you will get LUA error.
 
 Q: Is it compatible with FTSim+ soundpack?
 A: yes, you can use it, some sounds are played twice if you have loudspeaker switch set on by left side pilot arm, turn it off.
@@ -273,21 +240,12 @@ Q: Is the ACF file modified? i have community mod for better behavior.
 A: Yes, it contains code for weather radar, displays, no users mods. If you want community mods edit after installation the ACF file manually or in planemaker.
 
 Q: What about performance?
-A: about the same as 2.00 version
-
-Q: Why Premium content require registration and donation?
-A: Because it is unique, never seen before. It will keep the product alive. Includes future updates, fixes and support.
-
-Q: Is the Premium content worth it?
-A: Yes! It has much more features. Check the video tutorials and decide on your own. You will get what you see, no refunds. Feel free to ask if any doubts.
-
-Q: I got all engines shutdown, what i did wrong?
-A: This can happen with default weather bug in x-plane above FL530. Descend and watch total air temperature gauge or use 3rd party weather addons.
+A: about the same as 1.72 version
 
 Requirements:
-Concorde FXP v3.12
-X-Plane 12.00+
-FlywithLUA v2.81+
+Concorde FXP v2.01A
+X-Plane 11.30b1+
+FlywithLUA v2.7+
 
 Known bugs:
 Jettison from Colimata is faster than Heritage logic, results in lower remaining fuel on front fuel contents counter.
@@ -299,8 +257,8 @@ DTG counter after stop may not set correct remaining distance for next leg. Try 
 Temperature selectors for cabin and flight deck dont work when use mouse wheel, use clicks.
 When too many fuel flows and pumps are on, you may get FE fuel total contents bad readings.
 
-Version 3.00
-Gaston 2023
+Version 2.00
+Gaston 2022
 support:
 gastonreif@gmail.com
 
@@ -308,20 +266,20 @@ gastonreif@gmail.com
 
  
 
-What's New in Version 3.00
+What's New in Version 2.00
 
-Released December 14, 2023
+Released March 07, 2022
 
--Compatibility for X-Plane 12.08
-*PREMIUM ONLY*Animated cabin service
-*PREMIUM ONLY*Joystick mappings for VSI and Reheats
-*PREMIUM ONLY*GPWS aural warnings
-*PREMIUM ONLY*Possible to refill tanks 9,10 and 11 from main tanks 1,2,3 and 4.
-*PREMIUM ONLY*Aircondition fail groups working
-*PREMIUM ONLY*Ability to check GPU quality before power up
-*PREMIUM ONLY*Flight director can hold pitch without autopilot active
-*PREMIUM ONLY*Landing gear handle has now neutral position too
-*PREMIUM ONLY*flight recorder interval improved
-*PREMIUM ONLY*selectable 321 noise call via clock mode timer
-*PREMIUM ONLY*automatic bank limits at supersonic speeds
-*PREMIUM ONLY*various fixes
+- Fully operational CG computer with all displays and knobs
+- Fuel consumed counters now operational
+- Engine control schedule now simulated and affect N2 and EGT instruments
+- Improved engine instruments behavior
+- Introducing Plessey PVS1580 data acquisition computer, firstime ever simulated
+- Visual windshield icing
+- Improved cabin pressurization with oxygen system
+- Three independent chronometers all with timer function
+- Automatic fuel trim transfer with load limiters
+- Takeoff CG 54% switch operational
+- Improved Decision height alert
+- ISA temperature gauge now simulated on FE panel too
+- Altitude, temperature and speed indicators new in FE panel
